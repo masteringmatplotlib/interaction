@@ -53,5 +53,10 @@ docs/_build/
 # PyBuilder
 target/
 
+# VIM
+*.sw[op]
+
 # Other
 .venv
+*.png
+
