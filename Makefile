@@ -22,14 +22,7 @@ setup: virtual-env deps
 
 run:
 	. $(VENV)/bin/activate && \
-	ipython notebook notebooks/mmpl-preview.ipynb
+	ipython notebook notebooks/mmpl-arch.ipynb
 
 clean:
 	rm -rf $(VENV)
-
-# Use the following make target like so:
-#
-#   $ SCRIPT=./my-script.py LAYOUT=twopi MODE=simple make modgraph
-modgraph:
-	python third-party/modgraph.py $(SCRIPT) $(LAYOUT) $(MODE) && \
-	open modgraph.png
