@@ -59,4 +59,4 @@ target/
 # Other
 .venv
 *.png
-
+.ipynb_checkpoints/*
