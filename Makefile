@@ -28,13 +28,6 @@ clean:
 
 # Use the following make target like so:
 #
-#   $ SCRIPT=./my-script.py make callgraph
-callgraph:
-	. $(VENV)/bin/activate && \
-	pycallgraph graphviz -- $(SCRIPT)
-
-# Use the following make target like so:
-#
 #   $ SCRIPT=./my-script.py LAYOUT=twopi MODE=simple make modgraph
 modgraph:
 	python third-party/modgraph.py $(SCRIPT) $(LAYOUT) $(MODE) && \
