@@ -1,5 +1,6 @@
 VENV=.venv
 PYTHON=$(shell which python3.4)
+SOURCE=./lib
 
 virtual-env:
 	$(PYTHON) -m venv $(VENV)
@@ -19,6 +20,8 @@ deps: pygraphviz
 	pip3.4 install -r requirements.txt
 
 setup: virtual-env deps
+	. $(VENV)/bin/activate && \
+	$(PYTHON) setup.py install
 
 run:
 	. $(VENV)/bin/activate && \
@@ -26,3 +29,9 @@ run:
 
 clean:
 	rm -rf $(VENV)
+
+repl:
+	. $(VENV)/bin/activate && $(PYTHON)
+
+flakes:
+	flake8 $(SOURCE)
