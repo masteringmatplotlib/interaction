@@ -1,9 +1,10 @@
 VENV=.venv
-PYTHON=$(shell which python3.4)
+PYTHON=python3.4
+SYSTEM_PYTHON=$(shell which $(PYTHON))
 SOURCE=./lib
 
 virtual-env:
-	$(PYTHON) -m venv $(VENV)
+	$(SYSTEM_PYTHON) -m venv $(VENV)
 
 pygraphviz:
 	@git clone https://github.com/pygraphviz/pygraphviz
