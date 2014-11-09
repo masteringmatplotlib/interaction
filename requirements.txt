@@ -5,3 +5,4 @@ graphviz
 networkx
 matplotlib
 ipython[notebook]
+pycallgraph
