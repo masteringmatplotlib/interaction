@@ -21,8 +21,7 @@ deps: pygraphviz
 	pip3.4 install -r requirements.txt
 
 setup: virtual-env deps
-	. $(VENV)/bin/activate && \
-	$(PYTHON) setup.py install
+	. $(VENV)/bin/activate
 
 run:
 	. $(VENV)/bin/activate && \
@@ -32,7 +31,7 @@ clean:
 	rm -rf $(VENV)
 
 repl:
-	. $(VENV)/bin/activate && $(PYTHON)
+	. $(VENV)/bin/activate && ipython
 
 flakes:
 	flake8 $(SOURCE)
