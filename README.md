@@ -1,5 +1,10 @@
 # architecture
 
+## Dependencies
+
+Python 3.4 is required for these examples.
+
+
 ## Instructions
 
 The following will set up a local matplotlib environment for you, and start an
