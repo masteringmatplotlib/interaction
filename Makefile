@@ -42,9 +42,11 @@ repl:
 	. $(VENV)/bin/activate && $(IPYTHON)
 
 flakes:
+	@echo "\nChecking for flakes ...\n"
 	flake8 $(SOURCE)
 
 types: $(MYPY)
+	@echo "\nChecking types ...\n"
 	for FILE in ./lib/*.py; do mypy $$FILE; done
 
 check: flakes types
