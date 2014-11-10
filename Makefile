@@ -3,6 +3,7 @@ PYTHON=python3.4
 IPYTHON=ipython3
 SYSTEM_PYTHON=$(shell which $(PYTHON))
 SOURCE=./lib
+MYPY=$(VENV)/bin/mypy
 
 virtual-env:
 	$(SYSTEM_PYTHON) -m venv $(VENV)
@@ -16,6 +17,12 @@ pygraphviz:
 	python setup.py install
 	@rm -rf pygraphviz
 
+
+$(MYPY):
+	git clone https://github.com/JukkaL/mypy.git
+	. $(VENV)/bin/activate && \
+	cd mypy && $(PYTHON) setup.py install
+	rm -rf mypy
 
 deps: pygraphviz
 	. $(VENV)/bin/activate && \
@@ -36,3 +43,8 @@ repl:
 
 flakes:
 	flake8 $(SOURCE)
+
+types: $(MYPY)
+	for FILE in ./lib/*.py; do mypy $$FILE; done
+
+check: flakes types
