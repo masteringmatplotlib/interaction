@@ -2,8 +2,16 @@
 
 ## Dependencies
 
-Python 3.4 is required for these examples.
+The following are required for these examples:
 
+ * Python 3.4
+ * graphviz header files
+
+For Python, download 3.4 from python.org. For graphviz on Mac OS X:
+
+```
+$ brew install graphviz
+```
 
 ## Instructions
 
