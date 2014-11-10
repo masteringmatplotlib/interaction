@@ -17,7 +17,6 @@ pygraphviz:
 	python setup.py install
 	@rm -rf pygraphviz
 
-
 $(MYPY):
 	git clone https://github.com/JukkaL/mypy.git
 	. $(VENV)/bin/activate && \
