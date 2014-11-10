@@ -1,5 +1,6 @@
 VENV=.venv
 PYTHON=python3.4
+IPYTHON=ipython3
 SYSTEM_PYTHON=$(shell which $(PYTHON))
 SOURCE=./lib
 
@@ -25,13 +26,13 @@ setup: virtual-env deps
 
 run:
 	. $(VENV)/bin/activate && \
-	ipython notebook notebooks/mmpl-arch.ipynb
+	$(IPYTHON) notebook notebooks/mmpl-arch.ipynb
 
 clean:
 	rm -rf $(VENV)
 
 repl:
-	. $(VENV)/bin/activate && ipython
+	. $(VENV)/bin/activate && $(IPYTHON)
 
 flakes:
 	flake8 $(SOURCE)
