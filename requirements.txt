@@ -1,8 +1,5 @@
 setuptools
 flake8
 typecheck-decorator == 0.3b
-graphviz
-networkx
 matplotlib
 ipython[notebook]
-pycallgraph
