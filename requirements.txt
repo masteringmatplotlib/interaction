@@ -1,5 +1,14 @@
 setuptools
 flake8
 typecheck-decorator == 0.3b
+six
+python-dateutil
+pyparsing
+pytz
+numpy
 matplotlib
+scipy
+pandas
+seaborn
+sympy
 ipython[notebook]
