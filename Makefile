@@ -15,8 +15,7 @@ setup-submodule:
 
 # The 'setup' target needs to be run before the 'project-deps' target,
 # so that the includes are present (done by 'make project-setup').
-deps: project-deps
-deps: pygraphviz base-deps
+deps: base-deps
 	. $(VENV)/bin/activate && \
 	pip3.4 install -r requirements/part2.txt
 
